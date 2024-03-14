@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Estadísticas de Nombres
+{% endblock %}
+
+{% block content %}
+    <h1>Estadísticas de Nombres</h1>
+    <h2>Lista de Nombres:</h2>
+    <ul>
+        {% for nombre in nombres %}
+            <li>{{ nombre }}{{foor.loop}}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Nombres que Comienzan con la letra 'N':</h2>
+    <p>{{ contador_l }}</p>
+{% endblock %}

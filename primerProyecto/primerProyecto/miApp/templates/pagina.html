@@ -1,0 +1,53 @@
+{%extends 'layout.html' %}
+{%load static%}
+{%load filters%}
+{% block title %}
+
+Mi Pagina Web
+{% endblock %}
+
+{%block content %}
+    <h1 class="title">Pagina de mi web</h1>
+    <p>{{"Creado por Neylliber Lopez" |cut:''}}</p>
+    {{texto|default:"No hay nada"}}
+
+    <p>
+        {{lista|first}}
+        {{lista|last}}
+    </p>
+
+    <p>
+        {{lista|join:", "}}
+    </p>
+
+    <p>
+        {{lista|length}}
+    </p>
+
+    <p>
+        {{'texto de prueba'|length}}
+    
+    </p>
+
+    <p>
+        {{'texto de prueba'|upper}}
+    </p>
+
+    <p>
+        {{'texto de prueba'|lower}}
+    </p>
+
+    <p>
+        {{lista|random}}
+    </p>
+
+    <p>
+        {{'<h1>Texto</h1> <strong>Pruebas</strong>'|striptags}}
+    </p>
+
+    <p>
+        {{'<h1>Texto</h1> <strong>Pruebas</strong>'|striptags|wordcount}}
+    </p>
+
+    {{"Neylliber Melissa Lopez Higinio"|saludo|safe}}
+{%endblock%}

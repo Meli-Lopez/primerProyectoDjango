@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{%block title%}
+Pagina de Inicio
+{%endblock%}
+
+<!--{% load static %}-->
+{%block content%}
+<h2 class="title">{{title}}</h2>
+{{mi_variable}}
+{%if name == 'Neylliber'%}
+    <p>{{name}}{{forloop}}</p>
+{%else%}
+    <strong>Nombre no existe o no coincide</strong>
+{%endif%}
+<h1>Inicio</h1>
+<p>Años desde el 2024 hasta 2050</p>
+<ul>
+{% endblock %}

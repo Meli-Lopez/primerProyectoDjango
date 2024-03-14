@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title> 
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    {% comment 'Información de la pagina' %}
+    Proyecto de desarrollo 
+    {% endcomment %}
+    <!-- cabecera de la pagina -->
+    <header>
+        <div class="logotipo">
+            <!--Logo tipo Django-->
+            <img src="{% static 'images/logo.png'%}" alt="">
+            <h1>Sitio web con Django | Neylliber Lopez </h1>
+        </div>
+    </header>
+<nav>
+        <ul>
+            <li>
+                <a href="/hola_mundo">Hola mundo </a>
+            </li>
+            <li>
+                <a href="/Saludo">Saludo</a>
+            </li>
+            <li>
+                <!--<a href="/presentacion">Presentación </a>--> 
+            </li>
+            <li>
+                <a href="/">Inicio</a>
+            </li>
+            <li>
+                <a href="/contacto">Contacto </a>
+            </li>
+            <li>
+                <a href="/tarea">Tarea</a>
+            </li>    
+            <li>
+                <a href="/pagina">Pagina</a>
+            </li>  
+            <li>
+                <a href="{% url 'Listar'%}">Listar Productos</a>
+            </li> 
+            <li>
+                <a href="{% url 'create'%}"> Articulo</a>
+            </li> 
+            <li>
+                <a href="{% url 'create_full'%}"> Crear Articulo </a>
+            </li> 
+        </ul>
+</nav>
+<div class="barra">
+    <span class="esquina-izquierda"></span>
+    <span class="relleno-barra"></span>
+    <span class="esquina-derecha"></span>
+</div>
+<div id="content">
+    <div class="box">
+        
+        {%block content%}
+            <!--<strong>Contenido del Bloque Original</strong>--> 
+        {%endblock%}
+    </div>
+</div>
+<footer>Master del Framework &copy; Neylliber Lopez - {%now 'd/m/Y h:i:s'%}
+
+</footer>
+</body>
+</html>
